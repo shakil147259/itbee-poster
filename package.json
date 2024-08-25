@@ -1,0 +1,16 @@
+{
+  "name": "itbee-poster",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "tw-watch": "npx tailwindcss -i ./style.css -o ./output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.10",
+    "vite": "^5.4.1"
+  }
+}

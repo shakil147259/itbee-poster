@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ITBee Poster</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
+  </head>
+  <body>
+    <div id="app"></div>
+    <div class="flex p-2 gap-2">
+      <div class="flex flex-col gap-14 input border w-[50vw] h-[99vh] p-2">
+        <!-- Input selectors -->
+        <div class="selectors flex justify-between">
+          <button
+            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            id="hInControl"
+            onclick="showHideInput('hInContainer', 'hInControl')"
+          >
+            Header
+          </button>
+          <button
+            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            id="fileInControl"
+            onclick="showHideInput('fileInContainer','fileInControl')"
+          >
+            Image
+          </button>
+          <button
+            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            id="descInControl"
+            onclick="showHideInput('descInContainer', 'descInControl')"
+          >
+            Description
+          </button>
+        </div>
+
+        <!-- Header input -->
+        <div class="heading mt-2" id="hInContainer">
+          <input
+            type="text"
+            placeholder="heading"
+            class="px-4 py-2 w-full border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter text"
+            id="hIn"
+          />
+
+          <div class="flex justify-between">
+            <div class="inline-flex shadow-sm mt-1" role="group">
+              <button
+                type="button"
+                class="px-2 py-1 rounded-l-lg border border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                onclick="headerTextAlignChange('left')"
+              >
+                Left
+              </button>
+              <button
+                type="button"
+                class="px-2 py-1 border-t border-b border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                onclick="headerTextAlignChange('center')"
+              >
+                Middle
+              </button>
+              <button
+                type="button"
+                class="px-2 py-1 rounded-r-lg border border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                onclick="headerTextAlignChange('right')"
+              >
+                Right
+              </button>
+            </div>
+            <div class="inline-flex shadow-sm mt-1" role="group">
+              <button
+                type="button"
+                class="px-2 py-1 bg-blue-500 text-white rounded-l-lg border border-blue-600 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                onclick="headerColorChange('blue')"
+              >
+                blue
+              </button>
+              <button
+                type="button"
+                class="px-2 py-1 bg-gray-500 text-white border-t border-b border-gray-600 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                onclick="headerColorChange('black')"
+              >
+                black
+              </button>
+              <button
+                type="button"
+                class="px-2 py-1 bg-green-500 text-white rounded-r-lg border border-green-600 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400"
+                onclick="headerColorChange('green')"
+              >
+                green
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- file input -->
+        <div class="fileUpload mt-2" id="fileInContainer">
+          <div class="flex items-center justify-center w-full">
+            <label
+              for="file-upload"
+              class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100"
+            >
+              <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                <i class="ti ti-cloud-upload text-2xl text-gray-500"></i>
+                <p class="mb-2 text-sm text-gray-500">
+                  <span class="font-semibold">Click to upload</span> or drag and
+                  drop
+                </p>
+                <p class="text-xs text-gray-500">
+                  SVG, PNG, JPG or GIF (MAX. 800x400px)
+                </p>
+              </div>
+              <input id="file-upload" type="file" class="hidden" />
+            </label>
+          </div>
+        </div>
+
+        <!-- description input -->
+        <div class="descriptionInput mt-2" id="descInContainer">
+          <textarea
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+            rows="4"
+            placeholder="Enter your thoughts here..."
+            id="descIn"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Preview -->
+      <div class="flex flex-col gap-10 output border w-[50vw] h-[100vh] p-2">
+        <!-- header -->
+        <div class="mt-2" id="hOutContainer">
+          <span class="header-output text-4xl" id="hOut"></span>
+        </div>
+
+        <!-- image -->
+        <div class="mt-2">
+          <img
+            class="imgOut max-w-full h-auto rounded-lg shadow-md hidden"
+            id="imgOut"
+            src=""
+            alt="Image"
+          />
+        </div>
+
+        <!-- description -->
+        <div>
+          <span id="descOut"></span>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="/main.js"></script>
+  </body>
+</html>
